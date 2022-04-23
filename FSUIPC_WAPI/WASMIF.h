@@ -34,6 +34,8 @@ class WASMIF
 		// The 2 methods below are kept for backwards compatibility. The HWND handle is no longer required.
 		static class WASMIF* GetInstance(HWND hWnd, int startEventNo = EVENT_START_NO, void (*loggerFunction)(const char* logString) = nullptr);
 		static class WASMIF* GetInstance(HWND hWnd, void (*loggerFunction)(const char* logString));
+		// Returns the starting event ID with which the first, and only, instance of WASMIF was created with, or -1 if no instance of WASMIF has been created.
+		static int getInstanceStartingEventNo();
 
 		bool start(); // Startrs the connection to the WASM. 
 		bool isRunning(); // Returns True if cpnnected to the WASM 
@@ -44,6 +46,7 @@ class WASMIF
 		void setSimConfigConnection(int connection); // Used to set the SomConnect connection number to be used, from your SimConnect.cfg file.
 		int getLvarUpdateFrequency(); // Returns the lvar update frequency set in the client.
 		void setLogLevel(LOGLEVEL logLevel); // Changs the log level used
+		int getStartingEventNo();  // Returns the starting event ID which this instance was created with.
 		double getLvar(int lvarID); // Returns an lvar value by lvar ID
 		double getLvar(const char * lvarName); // Returns an lvar value by lvar name. Note that the name should NOT be prefixed by 'L:'
 		void setLvar(unsigned short id, const char* value); // Conveniance function. Sets the lvar value by id. The value is parsed and then either the short, unsigned short or double setLvar function is used 

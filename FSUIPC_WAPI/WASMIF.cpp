@@ -40,13 +40,12 @@ WASMIF::WASMIF() {
 	simConnection = SIMCONNECT_OPEN_CONFIGINDEX_LOCAL; // = -1
 }
 
-WASMIF::~WASMIF() {}
-
-void WASMIF::setSimConfigConnection(int connection) {
-	simConnection = connection;
+WASMIF::~WASMIF() {
+	end();
 }
 
 
+// static
 WASMIF* WASMIF::GetInstance(int startEventNo, void (*loggerFunction)(const char* logString)) {
 	if (m_Instance == 0)
 	{
@@ -74,9 +73,24 @@ WASMIF* WASMIF::GetInstance(HWND, void (*loggerFunction)(const char* logString))
 	return GetInstance(loggerFunction);
 }
 
+// static
+int WASMIF::getInstanceStartingEventNo() {
+	return m_Instance ? m_Instance->getStartingEventNo() : -1;
+}
+
+
+void WASMIF::setSimConfigConnection(int connection) {
+	simConnection = connection;
+}
+
 
 void WASMIF::setLogLevel(LOGLEVEL logLevel) {
 	pLogger->updateLogLevel((LogLevel)logLevel);
+}
+
+
+int WASMIF::getStartingEventNo() {
+	return startEventNo;
 }
 
 
