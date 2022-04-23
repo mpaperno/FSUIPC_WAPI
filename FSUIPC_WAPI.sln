@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FSUIPC_WAPI", "FSUIPC_WAPI\FSUIPC_WAPI.vcxproj", "{EF3DC317-02E6-4ABB-8C6F-C3ECF26DAEE9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FSUIPC_WAPI_CS", "FSUIPC_WAPI_CS\FSUIPC_WAPI_CS.vcxproj", "{871270F7-8858-47D2-AD02-9063BD05B5B4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EF3DC317-02E6-4ABB-8C6F-C3ECF26DAEE9} = {EF3DC317-02E6-4ABB-8C6F-C3ECF26DAEE9}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +26,12 @@ Global
 		{EF3DC317-02E6-4ABB-8C6F-C3ECF26DAEE9}.Release|x64.Build.0 = Release|x64
 		{EF3DC317-02E6-4ABB-8C6F-C3ECF26DAEE9}.Release|x86.ActiveCfg = Release|Win32
 		{EF3DC317-02E6-4ABB-8C6F-C3ECF26DAEE9}.Release|x86.Build.0 = Release|Win32
+		{871270F7-8858-47D2-AD02-9063BD05B5B4}.Debug|x64.ActiveCfg = Debug|x64
+		{871270F7-8858-47D2-AD02-9063BD05B5B4}.Debug|x64.Build.0 = Debug|x64
+		{871270F7-8858-47D2-AD02-9063BD05B5B4}.Debug|x86.ActiveCfg = Debug|x64
+		{871270F7-8858-47D2-AD02-9063BD05B5B4}.Release|x64.ActiveCfg = Release|x64
+		{871270F7-8858-47D2-AD02-9063BD05B5B4}.Release|x64.Build.0 = Release|x64
+		{871270F7-8858-47D2-AD02-9063BD05B5B4}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
