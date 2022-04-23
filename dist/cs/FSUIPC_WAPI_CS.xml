@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "FSUIPC_WAPI_CS"
+    </assembly>
+    <members>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.getHvarNameFromId(System.Int32)">
+            <summary> Gets the name of a hvar from an id. </summary>
+            <summary> Gets the name of a hvar from an id. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.getLvarNameFromId(System.Int32)">
+            <summary> Gets the name of an lvar from an id. </summary>
+            <summary> Gets the name of an lvar from an id. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.getHvarIdFromName(System.String)">
+            <summary> Utility function to get the id of a hvar. Hvar name must be preceded by 'H:'. -1 returned if hvar not found </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.getLvarIdFromName(System.String)">
+            <summary> Utility function to get the id of an lvar. Lvar name must not be preceded by 'L:'. -1 returned if lvar not found </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.getHvarList">
+            <summary> Returns a dict of hvar names keyed on the id </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.getLvarList">
+            <summary> Returns a dict of lvar names keyed on the id </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.getLvarValues">
+            <summary> Returns a dict of all lvar values keyed on the lvar name </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.flagLvarForUpdateCallback(System.String)">
+            <summary> Flags an lvar to be included in the lvarUpdateCallback, by name. Recommended to be used in your UpdateCallback. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.flagLvarForUpdateCallback(System.Int32)">
+            <summary> Flags an lvar to be included in the lvarUpdateCallback, by ID. Recommended to be used in your UpdateCallback. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.executeCalclatorCode(System.String)">
+            <summary> Executes the argument calculator code. Max allowed length of the code is defined in the WASM.h by MAX_CALC_CODE_SIZE. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.createLvar(System.String,System.Double)">
+            <summary> Creates an lvar and sets its initial value. The lvar name should NOT be preceded by 'L:'. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.logHvars">
+            <summary> Just print to log for now </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.logLvars">
+            <summary> Logs all lvars and values (to the defined logger). </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.setHvar(System.String)">
+            <summary> Activates a HTML variable by name. Note that, unlike lvars, the hvar name must be preceded by 'H:'. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.setHvar(System.Int32)">
+            <summary> Activates a HTML variable by ID. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.setLvar(System.String,System.UInt16)">
+            <summary> Sets the value of an lvar by name as an unsigned short. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.setLvar(System.String,System.Int16)">
+            <summary> Sets the value of an lvar by name as a (signed) short. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.setLvar(System.String,System.Double)">
+            <summary> Sets the value of an lvar by name as a double. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.setLvar(System.String,System.String)">
+            <summary> Convenience function. Sets the lvar value by name. The value is parsed and then either the short, unsigned short or double setLvar function is used. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.setLvar(System.UInt16,System.UInt16)">
+            <summary> Sets the value of an lvar by id as an unsigned short. This request goes via an event. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.setLvar(System.UInt16,System.Int16)">
+            <summary> Sets the value of an lvar by id as a (signed) short. This request goes via an event. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.setLvar(System.UInt16,System.Double)">
+            <summary> Sets the value of an lvar by id as a double. This request goes via a CDA. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.setLvar(System.UInt16,System.String)">
+            <summary> Convenience function. Sets the lvar value by id. The value is parsed and then either the short, unsigned short or double setLvar function is used. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.getLvar(System.String)">
+            <summary> Returns an lvar value by name. Note that the name should NOT be prefixed by 'L:'. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.getLvar(System.Int32)">
+            <summary> Returns an lvar value by ID. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.getStartingEventNo">
+            <summary> Returns the starting event ID which this instance was created with. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.setLogLevel(&lt;unknown type&gt;)">
+            <summary> Changes the log level used. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.getLvarUpdateFrequency">
+            <summary> Returns the lvar update frequency set in the client. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.setSimConfigConnection(System.Int32)">
+            <summary> Used to set the SomConnect connection number to be used, from your SimConnect.cfg file. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.setLvarUpdateFrequency(System.Int32)">
+            <summary> Sets the lvar update frequency in the client. This must be called before start, and only takes affect if lvar update is disabled in the WASM module. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.reload">
+            <summary> This sends a request to the WASM to re-scan for lvars and hvars, and drop/recreate the CDAs. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.end">
+            <summary> Terminates the connection to the WASM. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.isRunning">
+            <summary> Returns True if connected to the WASM. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.start">
+            <summary> Starts the connection to the WASM. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.GetInstance(System.Int32)">
+            <summary> Get the static instance of this class using a specific starting event ID. </summary>
+        </member>
+        <member name="M:FSUIPC.WASM.API.WASMIFCS.GetInstance">
+            <summary> Get the static instance of this class using the default starting event ID. </summary>
+        </member>
+        <member name="E:FSUIPC.WASM.API.WASMIFCS.OnNamedValuesChanged">
+            <summary> lVar value(s) have changed, keyed by name. </summary>
+        </member>
+        <member name="E:FSUIPC.WASM.API.WASMIFCS.OnNamedValueChanged">
+            <summary> An lVar with given name has changed value. </summary>
+        </member>
+        <member name="E:FSUIPC.WASM.API.WASMIFCS.OnValuesChanged">
+            <summary> lVar value(s) have changed, keyed by ID. </summary>
+        </member>
+        <member name="E:FSUIPC.WASM.API.WASMIFCS.OnValueChanged">
+            <summary> An lVar with given ID has changed value. </summary>
+        </member>
+        <member name="E:FSUIPC.WASM.API.WASMIFCS.OnVarsListUpdated">
+            <summary> The list of available variables has been updated (eg. when aircraft is loaded). </summary>
+        </member>
+        <member name="E:FSUIPC.WASM.API.WASMIFCS.OnLogEntryReceived">
+            <summary> Log entry has been received from the WASM plug in. </summary>
+        </member>
+        <member name="F:FSUIPC.WASM.API.WASMIFCS.EVENT_START_ID">
+            <summary> The default starting event ID.  </summary>
+        </member>
+        <member name="T:FSUIPC.WASM.API.WASMIFCS.LOG_LEVEL">
+            <summary> Logging verbosity level, used with setLogLevel() method. </summary>
+        </member>
+        <member name="T:FSUIPC.WASM.API.WASMIFCS">
+            <summary>
+Wrapper for the FSUIPC WASM Module API library.
+Used mostly like the original version, with some necessary adjustments for C#.
+Containers and strings are converted to the C# equivalents, or in the case
+of the value list change handlers (which originally send 2 arrays) they're converted to dictionaries.
+And of course we use events/delegates for callbacks.
+
+The only real addition are the "on variable changed" events (by name or ID) which can report
+individual changed values vs. the whole list at once. We have to loop over the incoming arrays anyway,
+so this is basically a "free" bonus feature.
+</summary>
+        </member>
+    </members>
+</doc>
