@@ -3,7 +3,7 @@
 #include <unordered_map>
 #include "WASM.h"
 
-#define WAPI_VERSION			"0.5.7"
+#define WAPI_VERSION			"0.5.10"
 
 
 using namespace std;
