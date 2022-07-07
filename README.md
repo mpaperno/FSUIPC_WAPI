@@ -1,4 +1,10 @@
 # FSUIPC_WAPI
+
+-------------------
+NOTE: This fork, and the C++/CLI wrapper, is no longer maintained.
+-------------------
+-------------------
+
 API for connection to the FSUIPC WASM Module
 
 FSUIPC_WAPI is a client-side API library for communication with the FSUIPC WASM module.
